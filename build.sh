@@ -27,3 +27,5 @@ make defconfig
 make download -j8
 make V=s -j$(nproc)
 echo "FILE_DATE=$(date +%Y%m%d%H%M)" >>"$GITHUB_ENV"
+echo "Build finished..."
+tree /home/runner/work/newifi3-d2-openwrt/newifi3-d2-openwrt/lede/bin/targets/
