@@ -16,7 +16,7 @@ cd "${OP_BUILD_PATH}"/lede || exit
 echo 'src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main' >>feeds.conf.default
 echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;luci-smartdns-dev' >>feeds.conf.default
 #echo 'src-git kenzo https://github.com/kenzok8/openwrt-packages' >>feeds.conf.default
-sed -i '5s/.*/src-git routing https://git.openwrt.org/feed/routing.git;openwrt-21.02/' feeds.conf.default
+sed -i '3c src-git routing https://git.openwrt.org/feed/routing.git;openwrt-21.02' feeds.conf.default
 
 echo "feeds:----"
 cat feeds.conf.default
