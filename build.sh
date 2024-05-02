@@ -19,6 +19,9 @@ echo 'src-git kenzo https://github.com/kenzok8/openwrt-packages' >>feeds.conf.de
 
 #git clone https://github.com/sirpdboy/luci-app-ddns-go.git package/ddns-go
 
+wget https://github.com/coolsnowwolf/lede/files/14080071/0006-fix-build-with-kernel-6.6.patch
+git apply 0006-fix-build-with-kernel-6.6.patch
+
 ./scripts/feeds update -a && ./scripts/feeds install -a
 rm -rf ./tmp && rm -rf .config
 mv "${OP_BUILD_PATH}"/.config "${OP_BUILD_PATH}"/lede/.config
