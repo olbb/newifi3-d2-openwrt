@@ -17,7 +17,7 @@ echo 'src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-pa
 echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;luci-smartdns-dev' >>feeds.conf.default
 echo 'src-git kenzo https://github.com/kenzok8/openwrt-packages' >>feeds.conf.default
 
-git clone https://github.com/sirpdboy/luci-app-ddns-go.git package/ddns-go
+#git clone https://github.com/sirpdboy/luci-app-ddns-go.git package/ddns-go
 
 ./scripts/feeds update -a && ./scripts/feeds install -a
 rm -rf ./tmp && rm -rf .config
