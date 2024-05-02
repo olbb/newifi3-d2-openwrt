@@ -16,8 +16,10 @@ cd "${OP_BUILD_PATH}"/lede || exit
 echo 'src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main' >>feeds.conf.default
 echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;luci-smartdns-dev' >>feeds.conf.default
 #echo 'src-git kenzo https://github.com/kenzok8/openwrt-packages' >>feeds.conf.default
+src-git routing https://git.openwrt.org/feed/routing.git;openwrt-21.02
 
 #git clone https://github.com/sirpdboy/luci-app-ddns-go.git package/ddns-go
+
 
 wget https://github.com/coolsnowwolf/lede/files/14080071/0006-fix-build-with-kernel-6.6.patch
 git apply 0006-fix-build-with-kernel-6.6.patch
