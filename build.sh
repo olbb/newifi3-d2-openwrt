@@ -23,7 +23,9 @@ cat feeds.conf.default
 
 
 git clone https://github.com/sirpdboy/luci-app-ddns-go.git package/ddns-go
-
+sed -i '13a PKG_USE_MIPS16:=0' package/ddns-go/ddns-go/Makefile
+echo "ddns-go content is:"
+cat package/ddns-go/ddns-go/Makefile
 
 wget https://github.com/coolsnowwolf/lede/files/14080071/0006-fix-build-with-kernel-6.6.patch
 git apply 0006-fix-build-with-kernel-6.6.patch
@@ -35,8 +37,6 @@ sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_genera
 make defconfig
 make download -j8
 make V=s -j$(nproc)
-#make image
-#make package/ddns-go/luci-app-ddns-go/compile V=s
 
 echo "FILE_DATE=$(date +%Y%m%d%H%M)" >>"$GITHUB_ENV"
 echo "Build finished..."
