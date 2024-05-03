@@ -22,7 +22,7 @@ echo "feeds:----"
 cat feeds.conf.default
 
 
-#git clone https://github.com/sirpdboy/luci-app-ddns-go.git package/ddns-go
+git clone https://github.com/sirpdboy/luci-app-ddns-go.git package/ddns-go
 
 
 wget https://github.com/coolsnowwolf/lede/files/14080071/0006-fix-build-with-kernel-6.6.patch
@@ -34,7 +34,9 @@ mv "${OP_BUILD_PATH}"/.config "${OP_BUILD_PATH}"/lede/.config
 sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_generate
 make defconfig
 make download -j8
-make V=s -j$(nproc)
+# make V=s -j$(nproc)
+make package/ddns-go/luci-app-ddns-go/compile V=s
+
 echo "FILE_DATE=$(date +%Y%m%d%H%M)" >>"$GITHUB_ENV"
 echo "Build finished..."
 tree -h /home/runner/work/newifi3-d2-openwrt/newifi3-d2-openwrt/lede/
