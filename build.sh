@@ -16,7 +16,7 @@ cd "${OP_BUILD_PATH}"/lede || exit
 echo 'src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main' >>feeds.conf.default
 echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;luci-smartdns-dev' >>feeds.conf.default
 #echo 'src-git kenzo https://github.com/kenzok8/openwrt-packages' >>feeds.conf.default
-sed -i '3c src-git routing https://git.openwrt.org/feed/routing.git;openwrt-21.02' feeds.conf.default
+sed -i '4c src-git routing https://git.openwrt.org/feed/routing.git;openwrt-21.02' feeds.conf.default
 
 echo "feeds:----"
 cat feeds.conf.default
@@ -40,4 +40,4 @@ make V=s -j$(nproc)
 
 echo "FILE_DATE=$(date +%Y%m%d%H%M)" >>"$GITHUB_ENV"
 echo "Build finished..."
-tree -h /home/runner/work/newifi3-d2-openwrt/newifi3-d2-openwrt/lede/
+#tree -h /home/runner/work/newifi3-d2-openwrt/newifi3-d2-openwrt/lede/
