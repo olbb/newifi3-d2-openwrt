@@ -14,7 +14,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     env:
       BIN_PATH: /home/runner/work/newifi3-d2-openwrt/newifi3-d2-openwrt/lede/bin
 
